@@ -8,5 +8,16 @@ namespace MvcCountries
 {
     public class CountryListView
     {
+        public CountryListView()
+        {
+                
+        }
+
+        public List<Country> Countries { get; set; }
+
+        public void Display()
+        {
+
+        }
     }
 }

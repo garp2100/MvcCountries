@@ -8,5 +8,19 @@ namespace MvcCountries
 {
     public class CountryController
     {
+        public List<Country> CountryDbCountries { get; set; } = new List<Country>()
+        {
+
+        };
+
+        public void CountryAction()
+        {
+
+        }
+
+        public void WelcomeAction()
+        {
+
+        }
     }
 }

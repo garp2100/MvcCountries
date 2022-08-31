@@ -8,5 +8,15 @@ namespace MvcCountries
 {
     public class CountryView
     {
+        public CountryView(Country country)
+        {
+            DisplayCountry = country;
+        }
+        public Country DisplayCountry { get; set; }
+
+        public void Display()
+        {
+
+        }
     }
 }

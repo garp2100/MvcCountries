@@ -8,5 +8,14 @@ namespace MvcCountries
 {
     public class Country
     {
+        public Country()
+        {
+                
+        }
+
+        public string Name { get; set; }
+        public string Continent { get; set; }
+        public List<string> Ingredients { get; set; }
+
     }
 }
