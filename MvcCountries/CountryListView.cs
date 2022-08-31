@@ -17,7 +17,6 @@ namespace MvcCountries
 
         public void Display()
         {
-            Console.WriteLine("Here's a list of countries in our database");
             for (int i = 0; i < Countries.Count; i++)
             {
                 Console.WriteLine($"{i+1}. {Countries[i].Name}");

@@ -22,14 +22,17 @@ namespace MvcCountries
             ),
         };
 
-        public void CountryAction()
+        public void CountryAction(Country c)
         {
-
+            
         }
 
         public void WelcomeAction()
         {
-
+            var view = new CountryListView(CountryDb);
+            Console.WriteLine("Hello, welcome to the country app. Which country would you like to learn more about?");
+            view.Display();
+            Console.WriteLine("Enter 1-" + CountryDb.Count);
         }
     }
 }
