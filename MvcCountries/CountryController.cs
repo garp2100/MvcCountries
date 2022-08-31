@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,18 +22,40 @@ namespace MvcCountries
                 new List<string>(){"yellow", "blue", "red"}
             ),
         };
-
-        public void CountryAction(Country c)
-        {
-            
-        }
-
         public void WelcomeAction()
         {
-            var view = new CountryListView(CountryDb);
-            Console.WriteLine("Hello, welcome to the country app. Which country would you like to learn more about?");
+            var continueSelect = "";
+            do
+            {
+                Console.WriteLine(
+                    "Hello, welcome to the country app. Which country would you like to learn more about?");
+                var view = new CountryListView(CountryDb);
+                view.Display();
+                Console.WriteLine("Enter 1-" + CountryDb.Count);
+                var index = 0;
+                var validatedInputed = true;
+                do
+                {
+                    var input = Console.ReadLine();
+                    validatedInputed = int.TryParse(input, out index);
+                    if (!validatedInputed)
+                    {
+                        Console.WriteLine("invalid input, please try again");
+                        continue;
+                    }
+                } while (!validatedInputed);
+                
+                CountryAction(CountryDb[index-1]);
+                Console.WriteLine("Would you like to try again? y/n");
+                continueSelect = Console.ReadLine();
+            }
+            while (continueSelect == "y");
+        }
+
+        public void CountryAction(Country country)
+        {
+            var view = new CountryView(country);
             view.Display();
-            Console.WriteLine("Enter 1-" + CountryDb.Count);
         }
     }
 }

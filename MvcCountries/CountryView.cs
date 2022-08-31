@@ -20,7 +20,7 @@ namespace MvcCountries
             DisplayCountry.Colors.ForEach(i => countryColors += i + ", ");
             Console.WriteLine("Name: " + DisplayCountry.Name);
             Console.WriteLine("Continent: " + DisplayCountry.Continent);
-            Console.WriteLine("Name: " + countryColors);
+            Console.WriteLine("Flag Colors: " + countryColors);
         }
     }
 }
