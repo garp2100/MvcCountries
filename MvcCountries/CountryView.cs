@@ -16,7 +16,11 @@ namespace MvcCountries
 
         public void Display()
         {
-
+            string countryColors = "";
+            DisplayCountry.Colors.ForEach(i => countryColors += i + ", ");
+            Console.WriteLine("Name: " + DisplayCountry.Name);
+            Console.WriteLine("Continent: " + DisplayCountry.Continent);
+            Console.WriteLine("Name: " + countryColors);
         }
     }
 }
